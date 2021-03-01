@@ -1,0 +1,35 @@
+.text {
+    height:400px;
+    background-color:#a78a84;
+    position: relative;
+    float: right;
+    color: #fff;
+    padding: 50px 50px 12% 50px;
+}
+
+.text .title p {
+    font-size: 16px;
+}
+.text .setting p {
+    font-size: 36px;
+    font-family: 'Montserrat','tt','微软雅黑';
+}
+.text i {
+    display: none;
+}
+.text .intro p {
+    position: relative;
+    font-size: 16px;
+    line-height: 170%;
+    white-space: pre-line;
+}
+.text .more a {
+    display: inline-block;
+    width: 45%;
+    margin-top: 20px;
+    padding: 12px 0;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    border: 2px solid #fff;
+}
