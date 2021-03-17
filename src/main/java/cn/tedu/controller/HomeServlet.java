@@ -37,7 +37,7 @@ public class HomeServlet extends HttpServlet {
 
         //创建并查询所有瀑布流图片
         ProductDao pDao = new ProductDao();
-        List<Product> plist = pDao.findAll();
+        List<Product> plist = pDao.findTopSix();
         System.out.println(plist);
         context.setVariable("plist",plist);
         ThUtils.print("home.html",context,response);

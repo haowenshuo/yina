@@ -3413,17 +3413,7 @@ dl + dl {
     font-family: "微软雅黑";
     border-top: 1px solid #fff;
     cursor: pointer; }
-.where .icont {
-    width: 30px;
-    height: 30px;
-    background: url("../img/jiahao.png") no-repeat;
-    margin-top: 18px;
-    margin-left: 74px; }
-@media (max-width: 640px) {
-    .where .icont {
-        margin-left: 20px; } }
-.where .act {
-    background: url("../img/jianhao.png") no-repeat; }
+
 .where p {
     font-size: 16px;
     line-height: 18px;
@@ -4076,20 +4066,20 @@ li {
     width: 84px;
     height: 82px; }
 .zhengti .right-btn .xiaojiantou {
-    background: url("../img/xiaojiantou.png") no-repeat 0 90px; }
+}
 @media (max-width: 767px) {
     .zhengti .right-btn .xiaojiantou {
-        background: url("../img/xiaojiantou1.png") no-repeat 44% bottom; } }
+    } }
 .zhengti .right-btn .nei-color {
-    background: url("../img/nei2.png") no-repeat; }
+}
 .zhengti .right-btn .xiaojiantou .nei-color {
-    background: url("../img/nei1.png") no-repeat; }
+}
 .zhengti .right-btn .wai-color {
-    background: url("../img/wai.png") no-repeat; }
+}
 .zhengti .right-btn .xiaojiantou .wai-color {
-    background: url("../img/wai2.png") no-repeat; }
+}
 .zhengti .right-btn .dis-wai {
-    background: url("../img/wai3.png") no-repeat; }
+}
 .zhengti .right-btn .schedule {
     margin-top: 90px; }
 .zhengti .right-btn .schedule input {
@@ -4567,12 +4557,7 @@ label p {
     *zoom: 1;
     letter-spacing: normal;
     *word-spacing: normal; }
-.m-guid-list-1-qyb .guid-item .left {
-    padding-top: 18px;
-    padding-left: 12px;
-    width: 19.94863%;
-    height: 65px;
-    background: url(../img/guidpg-btn-toright.png) no-repeat right center; }
+
 @media (max-width: 767px) {
     .m-guid-list-1-qyb .guid-item .left {
         text-align: center;

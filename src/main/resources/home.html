@@ -54,10 +54,11 @@
 
 
     }
-
+    /*遮罩层*/
     .grid-item a:hover .mask {
         opacity: 1;
     }
+    /*指针移入放大*/
     .grid-item img{
         cursor: pointer;
         transition: all 1s;
@@ -65,13 +66,29 @@
     .grid-item a:hover img{
         transform: scale(1.1);
     }
+    .nav>li>a{
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        color: black;
+        font-family: 宋体;
+
+    }
+    .nav{
+        padding-left: 0;
+        list-style: none;
+        float: right;
+    }
+    .nav.navbar-nav>li>a:hover{
+        color: blue;
+    }
 
 </style>
 <body>
 <div class="navfix">
     <ul class="top-nav">
-        <li><a href="">摄影作品</a></li>
-        <li><a href="">套餐价格</a></li>
+        <li><a href="/product">摄影作品</a></li>
+        <li><a href="/packages">套餐价格</a></li>
         <li>
             <div class="logopick">
                 <a href="" title="首页">
@@ -79,8 +96,8 @@
                 </a>
             </div>
         </li>
-        <li><a href="">客户引导</a></li>
-        <li><a href="">联系我们</a></li>
+        <li><a href="/lead.html">客户引导</a></li>
+        <li><a href="/contact">联系我们</a></li>
     </ul>
 </div>
 <div class="header">
@@ -88,13 +105,16 @@
         <a href="/" class="logo" title="紫竹桥儿童摄影,航天桥满月照,公主坟满月照,五道口百天照,上地百天照,亚运村儿童摄影,中关村儿童摄影,中关村百天照,海淀区周岁照,北京周岁摄影,航天桥儿童摄影,门头沟儿童摄影,石景山孕妇摄影,海淀区孕妇照,北京儿童摄影,北京满月照,北京百天照,北京周岁照,北京新生儿上门">
             <img src="img/logo.png"/>
         </a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login.html">管理员入口</a></li>
+        </ul>
     </div>
     <div class="h-nav" style="background-color:  rgba(81,24,18,0.2);">
         <!--<div class="opacity opacity1" style="background-color:  rgba(81,24,18,0.2);"></div>-->
         <ul class="s-nav">
             <li th:each="t:${list}">
                 <div class="daxiao">
-                    <a th:text="${t.name}" href=""></a>
+                    <a th:text="${t.name}" th:href="${t.url}"></a>
                 </div>
                 <div class="sport">
                     <span class="bianhua" style="left: 50%; width: 0"></span>
@@ -185,7 +205,7 @@
 <div class="twophoto clearfix">
     <div class="m-item linkBox">
         <div class="overlay">
-            <a href="" class="midway-horizontal midway-vertical" style="margin-top: -92.5px;margin-left: -138.5px">
+            <a href="/aboutUs" class="midway-horizontal midway-vertical" style="margin-top: -92.5px;margin-left: -138.5px">
                 <img src="img/tuwen.png" class="tuwen img-responsive">
                 <p>
                     <img src="img/chengzhang.png" class="chengzhang"></p>
@@ -203,19 +223,23 @@
             </div>
             <div class="intro">
                 <p>
-                    公司创立10余年来，秉承“原创”理念，努力打造国内一流儿童摄影品牌。北京海淀区、朝阳区、丰台区以及国内200余家品牌加盟店,要问北京儿童摄影哪家好,首选伊娜爱贝儿。</p>
+                    公司创立10余年来，秉承“原创”理念，努力打造国内一流儿童摄影品牌。北京海淀区、朝阳区、丰台区以及国内200余家品牌加盟店,要问北京儿童摄影哪家好,首选伊娜爱贝儿。
+                </p>
             </div>
             <div class="more">
-                <a href="">READ MORE</a></div>
+                <a href="/aboutUs">READ MORE</a>
+            </div>
         </div>
     </div>
     <div class="m-item linkBox">
         <div class="overlay">
-            <a href="" class="midway-horizontal midway-vertical" style="margin-top: -92.5px;margin-left: -77px">
+            <a href="/aboutUs" class="midway-horizontal midway-vertical" style="margin-top: -92.5px;margin-left: -77px">
                 <img src="img/team.png" class="once">
                 <p>
-                    <img src="img/tuandui.png" class="tuandui" /></p>
-                <input type="submit" class="pc-btn" value="查看更多" /></a>
+                    <img src="img/tuandui.png" class="tuandui" />
+                </p>
+                <input type="submit" class="pc-btn" value="查看更多" />
+            </a>
         </div>
         <img src="img/hright.png" class="wow fadeIn animated img-responsive"></div>
 </div>
@@ -232,13 +256,13 @@
                         <dd class="righttext">
                             <p class="big">伊娜爱贝儿官方微博</p>
                             <p class="xiahengxian">
-                                "yinababybbs"
+                                yinababybbs
                                 <span>@WEIBO</span>
                             </p>
                             <div>
                                 <p>及时获取伊娜爱贝儿摄影品牌信息</p>
                                 <p>
-                                    "微博号:"
+                                    微博号:
                                     <span>伊娜爱贝儿</span>
                                 </p>
                             </div>
@@ -251,13 +275,13 @@
                         <dd class="righttext">
                             <p class="big">伊娜爱贝儿官方微信</p>
                             <p class="xiahengxian">
-                                "yinababyer"
+                                yinababyer
                                 <span>@WEIXIN</span>
                             </p>
                             <div>
                                 <p>及时获取伊娜爱贝儿摄影品牌信息</p>
                                 <p>
-                                    "微信号:"
+                                    微信号:
                                     <span>yinababyer</span>
                                 </p>
                             </div>
@@ -270,13 +294,13 @@
                         <dd class="righttext">
                             <p class="big">伊娜爱贝儿微信客服</p>
                             <p class="xiahengxian">
-                                "yinababy001"
+                                yinababy001
                                 <span>@WEIXIN</span>
                             </p>
                             <div>
                                 <p>及时获取伊娜爱贝儿优惠资讯</p>
                                 <p>
-                                    "微信号:"
+                                    微信号:
                                     <span>yinababy001</span>
                                 </p>
                             </div>
@@ -284,7 +308,7 @@
                     </dl>
                 </div>
             </div>
-            <div ftlxnews>
+            <div class="ftlxnews">
                 <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
                     <div class="contaci">
                         <h2 class="eng">CONTACT US</h2>
@@ -352,20 +376,7 @@
     <a target="_blank" href="http://www.gaonphoto.com/" style="color: #505050">服装摄影</a>
 
 </div>
-<script>
-    (function(){
-   var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+
 <script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
 <script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
 <script type="text/javascript" src="bootstrap3/js/holder.js"></script>
@@ -373,7 +384,7 @@
 <script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
 <script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
 <script type="text/javascript" src="bootstrap3/js/navhengtiao.js"></script>
-<script type="text/javascript" src="bootstrap3/js/indedx.js"></script>
+<script type="text/javascript" src="bootstrap3/js/main1.js"></script>
 <script type="text/javascript" src="bootstrap3/js/main.js"></script>
 <script type="text/javascript" src="bootstrap3/js/jquery-scrollto.js"></script>
 <!--引入和瀑布流相关的文件-->

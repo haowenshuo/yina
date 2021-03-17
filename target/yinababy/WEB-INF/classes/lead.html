@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>伊娜爱贝儿儿童摄影工作室 - 新生儿摄影|满月照|百天照|孕妇照|新生儿上门拍摄|北京海淀区儿童摄影团购</title>
+    <meta name="description" content="北京伊娜爱贝儿摄影美学馆,全国知名的专业北京儿童摄影加盟连锁。高端定制北京新生儿摄影、满月照、百天照、周岁照、生日宝宝照以及亲子孕妇照。为北京海淀区、朝阳区以及中关村、五道口、北太平庄、苏州桥、公主坟/万寿路、紫竹桥、航天桥、上地、颐和园等提供上门拍摄新生儿服务。要问北京海淀区儿童摄影哪家好?首选伊娜爱贝儿！">
+    <meta name="Keywords" content="海淀区儿童摄影,北京海淀区儿童摄影哪家好,北京儿童摄影团购,北京儿童摄影影楼,朝阳区儿童摄影,朝阳区儿童摄影团购,北京新生儿上门摄影,北京上门拍摄新生儿">
+    <link rel="stylesheet" href="bootstrap3/css/main.css"/>
+    <link rel="stylesheet" href="bootstrap3/css/home.css" />
+</head>
+<style>
+    /* .header{
+         position: relative;
+     }
+     .h-nav{
+         background-color: #D7CACB;
+     }
+
+     .grid-item{
+         width: 370px;
+         margin: 0 10px 30px 0;
+         overflow: hidden;
+     }
+     .feel{
+         margin: 11px 0 52px 0;
+     }
+     .mask {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(237, 209, 191, 0.65);
+         color: #ffffff;
+         opacity: 0;
+         display:table-cell;
+         text-align: center;
+         vertical-align:middle;
+     }
+
+
+     .input{
+         position: absolute;
+         top: 45%;
+         left: 40%;
+         text-align: center;
+         font-size: 24px;
+         border: none;
+         background-color: rgba(237, 209, 191, 0);
+
+
+     }*/
+
+    .grid-item a:hover .mask {
+        opacity: 1;
+    }
+    .grid-item img{
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .grid-item a:hover img{
+        transform: scale(1.1);
+    }
+    .m-guid-list-1-qyb .guid-item .left1 {
+        padding-top: 18px;
+        padding-left: 12px;
+        width: 19.94863%;
+        height: 65px;
+        background: url(../webapp/img/arrowsleft.png) no-repeat right center;
+        white-space: normal;
+        vertical-align: middle;
+        display: inline-block;
+        letter-spacing: normal;
+    }
+    .where .icont {
+        width: 30px;
+        height: 30px;
+        background: url("../webapp/img/jiahao.png") no-repeat;
+        margin-top: 18px;
+        margin-left: 74px; }
+    @media (max-width: 640px) {
+        .where .icont {
+            margin-left: 20px; } }
+    .where .act {
+        background: url("../webapp/img/jianhao.png") no-repeat; }
+
+
+
+
+</style>
+<body>
+<div class="header">
+    <div class="hd">
+        <a href="/" class="logo" title="紫竹桥儿童摄影,航天桥满月照,公主坟满月照,五道口百天照,上地百天照,亚运村儿童摄影,中关村儿童摄影,中关村百天照,海淀区周岁照,北京周岁摄影,航天桥儿童摄影,门头沟儿童摄影,石景山孕妇摄影,海淀区孕妇照,北京儿童摄影,北京满月照,北京百天照,北京周岁照,北京新生儿上门">
+            <img src="img/logo.png"/>
+        </a>
+    </div>
+    <div class="h-nav" style="background-color:  rgba(81,24,18,0.2);">
+        <!--<div class="opacity opacity1" style="background-color:  rgba(81,24,18,0.2);"></div>-->
+        <ul class="s-nav">
+            <li th:each="t:${list}">
+                <div class="daxiao">
+                    <a th:text="${t.name}" th:href="${t.url}"></a>
+                </div>
+                <div class="sport">
+                    <span class="bianhua" style="left: 50%; width: 0"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="tab-btn-guid">
+    <div class="mid-btn clearfix">
+        <div class="left-btn j-guid-tabBtn bgc2" onclick="changeDivType(this);">
+            <img src="img/liucheng.png" alt="">
+        </div>
+        <div class="left-btn j-guid-tabBtn" onclick="changeDivType(this);">
+            <img src="img/tieshi.png" alt="">
+        </div>
+    </div>
+</div>
+<div style="height: 75px"></div>
+<div class="j-guid-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="nashi col-xs-6 col-xs-offset-3">
+                <img src="img/fuwuliucheng.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="m-guid-1-qyb">
+                    <div class="m-guid-nav-1-qyb">
+                        <div class="u-guid-btn">
+                            <a href="lead.html#customGuidItem1" class="step-num">step.1</a>
+                            <a href="lead.html#customGuidItem1">
+                                <img src="img/yuyue.png" alt="预约">
+                            </a>
+                        </div>
+                        <div class="u-guid-btn">
+                            <a href="lead.html#customGuidItem2" class="step-num">step.2</a>
+                            <a href="lead.html#customGuidItem2">
+                                <img src="img/tixing.png" alt="拍摄前提醒">
+                            </a>
+                        </div>
+                        <div class="u-guid-btn">
+                            <a href="lead.html#customGuidItem3" class="step-num">step.3</a>
+                            <a href="lead.html#customGuidItem3">
+                                <img src="img/shooting.png" alt="拍摄当天">
+                            </a>
+                        </div>
+                        <div class="u-guid-btn">
+                            <a href="lead.html#customGuidItem4" class="step-num">step.4</a>
+                            <a href="lead.html#customGuidItem4">
+                                <img src="img/selection.png" alt="预约选片">
+                            </a>
+                        </div>
+                        <div class="u-guid-btn">
+                            <a href="lead.html#customGuidItem5" class="step-num">step.5</a>
+                            <a href="lead.html#customGuidItem5">
+                                <img src="img/design.png" alt="设计">
+                            </a>
+                        </div>
+                        <div class="u-guid-btn">
+                            <a href="lead.html#customGuidItem6" class="step-num">step.6</a>
+                            <a href="lead.html#customGuidItem6">
+                                <img src="img/qc.png" alt="质检">
+                            </a>
+                        </div>
+                        <div class="u-guid-btn">
+                            <a href="lead.html#customGuidItem7" class="step-num">step.7</a>
+                            <a href="lead.html#customGuidItem7">
+                                <img src="img/pickup.png" alt="选片">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="m-guid-list-1-qyb">
+                        <div class="guid-item s-bg-yelow" id="customGuidItem1">
+                            <div class="left1">
+                                <span class="step-num">step.1</span>
+                                <span class="guid-breif">预约</span>
+                            </div>
+                            <div class="right">
+                                <p>我们的拍摄档期需提前3－6个月提前预定，时间定好后需提前支付定金200元（可转帐支付）。每年档期开放时间为1月1日开放当年6月至12月的拍摄时间，6月1日开放第二年1月至5月的拍摄时间。</p>
+                            </div>
+                        </div>
+                        <div class="guid-item" id="customGuidItem2">
+                            <div class="left1">
+                                <span class="step-num">step.2</span>
+                                <span class="guid-breif">拍摄前提<br>醒</span>
+                            </div>
+                            <div class="right">
+                                <p>
+                                    <i class="wenzicolor">拍摄前四天电话沟通内容：</i>
+                                    由于客户预约档期时间较长，难免会记错、忘记或是遇到宝贝身体不适、爸爸妈妈临时的工作安排等等情况，所以我们会提前四天再次与您确认时间，以便重新帮您安排拍摄档期。因为有这些情况的出现，可能会有客户提前数月预约不到档期，但是会在临近宝贝需要拍摄照片的时间接到我们客服姐姐的电话，询问是否还要再来拍摄的情况哦！
+                                </p>
+                                <p>
+                                    <i class="wenzicolor">拍摄前一天电话沟通内容：</i>
+                                    再次和您确认拍摄时间、地点，并提醒一些拍摄前需要准备的物品
+                                </p>
+                            </div>
+                        </div>
+                        <div class="guid-item s-bg-yelow" id="customGuidItem3">
+                            <div class="left1">
+                                <span class="step-num">step.3</span>
+                                <span class="guid-breif">拍摄当天</span>
+                            </div>
+                            <div class="right">
+                                <p> 拍摄当天我们会为您提供贴心服务，摄影师会拍摄宝宝每个精彩瞬间，请爸爸妈妈们一定要准时哦！</p>
+                            </div>
+                        </div>
+                        <div class="guid-item" id="customGuidItem4">
+                            <div class="left1">
+                                <span class="step-num">step.4</span>
+                                <span class="guid-breif">预约选片</span>
+                            </div>
+                            <div class="right">
+                                <p>当天拍摄完成后我们的导师姐姐会帮您预约选照片的时间。</p>
+                                <p>周一至周五的选片时间需要提前7至10天预约；</p>
+                                <p>周六日及节假日的选片时间需要提前10至15天预约；</p>
+                                <p>如您当时不能确定选片时间，也可以稍后致电我们的客服姐姐！</p>
+                                <p>选片前一天我们的客服人员会与您电话联系确认，并提醒您可以带Ｕ盘将当天选好的底片先带回与家人分享。</p>
+                            </div>
+                        </div>
+                        <div class="guid-item s-bg-yelow" id="customGuidItem5">
+                            <div class="left1">
+                                <span class="step-num">step.5</span>
+                                <span class="guid-breif">设计</span>
+                            </div>
+                            <div class="right">
+                                <p>
+                                    设计周期：15天
+                                    设计流程：
+                                    1.设计师完成初稿
+                                    2.将设计稿件以邮件的方式发送给您并短信提醒
+                                    3.根据您的意见进行修改
+                                    4.修改后的设计稿件将再次以邮件的方式发送给您
+                                    5.接到您的定稿确认
+                                    6.设计师检查整理稿件发片制作
+                                    修改周期为小变动3至5天，大更改为5至7天。
+                                    我们的制作周期为确定稿件后25天。
+                                    制作完成后我们的后期整件部门会电话通知您哦！
+                                </p>
+                            </div>
+                        </div>
+                        <div class="guid-item" id="customGuidItem6">
+                            <div class="left1">
+                                <span class="step-num">step.6</span>
+                                <span class="guid-breif">质检</span>
+                            </div>
+                            <div class="right">
+                                <p>我们的制作过程为：出片---回片质检---发往相册厂制作---回件---回件质检---整理相册---通知取件。</p>
+                            </div>
+                        </div>
+                        <div class="guid-item s-bg-yelow" id="customGuidItem7">
+                            <div class="left1">
+                                <span class="step-num">step.7</span>
+                                <span class="guid-breif">通知取件</span>
+                            </div>
+                            <div class="right">
+                                <p>我们经过质检过程后会电话通知您来取件，我们的取件时间为AM9:00至PM6:00(周一至周日)  我们也可提供有偿的送件服务，您可根据您的时间随意选择。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="j-guid-wrap lala">
+    <div class="container">
+        <div class="row">
+            <div class="nashi col-xs-6 col-xs-offset-3">
+                <img src="img/tieshi1.png" alt="">
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于拍摄服务</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content">伊娜爱贝儿的答案：我们已经为您的宝贝准备了较为丰富的服装，但由于客户较多为了避免服装重复出现，同时体现您家宝贝的独特气质，我们希望您提前为宝贝准备合身合体、颜色统一、款式简单的服装。 </p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于服装消毒</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content">伊娜爱贝儿的答案：宝贝妈妈们请放心，伊娜爱贝儿每天下架的服装都由专业的保洁阿姨轻柔手洗，而且采用无刺激、无磷的洗衣液哦！然后统一采用紫外线消毒灯进行全场消毒。另外紫外线消毒的服装不能马上穿在宝贝身上，否则可以会引起宝贝皮肤的不适，所以我们不承诺现场消毒。</p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于拍摄前的准备</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content">伊娜爱贝儿的答案：拍摄前需要准备宝贝拍摄当日所需的奶粉零食及日常用品等。另外，您的宝贝如果是百天或1岁，宝妈们可以带上您或亲属朋友赠送给宝贝的小礼服、特殊服装、金银锁，以及爸爸妈妈恋爱结婚时有纪念意义的物品。同时带上您自己的创意和想法，伊娜爱贝儿的摄影师会把您带来的物品及创意想法带进宝宝的照片里。 </p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于外景</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content">伊娜爱贝儿的答案：首先我们会选择店面附近的公园在光线较为柔和的下午为宝宝拍摄外景。为了有个良好的拍摄效果，请您提前协助我们尽量帮宝宝调整睡眠。另外我们预留的时间是相对充足的，其中包含宝宝的休息时间。不过请您务必准时，避免缩短宝贝的拍摄时间。 </p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于影棚温度</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content">伊娜爱贝儿的答案：伊娜爱贝儿的影棚温度冬季会保持在25度左右、夏季在23度左右。如果您在拍摄过程中感觉温度不适，请随时告知您身边的工作人员调节到适宜的温度。</p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于拍摄方式</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content"> 伊娜爱贝儿的答案：拍摄前摄影师会和您简单沟通，为达到最好的拍摄效果，我们会采取一些特殊的拍摄方法，如果您在拍摄当中对我们的拍摄方式感到不适随时告知身边的工作人员，我们会立刻停止并与您进行沟通。</p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于拍摄时间</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content"> 伊娜爱贝儿的答案：我们为每一个家庭预留了充足的拍摄时间 上午时间段：9:00-13:00 ；下午时间段：14:00-18:00 当然为了拍摄顺利完成，还是要提醒您要准时到哦！ </p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于宝贝的发型</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content">
+                    如果想要得到较好的拍摄效果，请宝贝妈妈一定要给宝贝留起较好的发型哦！<br>
+                    <i class="wenzicolor">百天宝贝：</i>
+                    无论男女宝贝都希望爸爸妈妈在剪我们的满月头发时要手下留情或是等到拍完百天照后再剪哦！<br>
+                    <i class="wenzicolor">周岁宝贝：</i>
+                    在爸爸妈妈的精心照顾下我已经出落成个小”大人”了! 可不希望在照片中出现个“小秃头”，所以也请爸爸妈妈提前给我留个小“大人”发型吧！<br>
+                    <i class="wenzicolor">大宝贝们：</i>
+                    我已经是独具个性和气质的小人了，所以也请爸爸妈妈重视我的独特哦！请带我去请专业的造型叔叔们提前设计个适合我的发型哦！<br>
+                </p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于妈妈们的妆容</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content"> 如果妈妈们想美美的出现在与宝贝的合影中，让长大后的他（她）们骄傲的说：“看我老妈多美！”就请妈妈们提前修剪个美美的发型并带上最美的衣服哦！如果您是选择基础的拍摄影棚，那您就需要化个淡妆再来哦！ </p>
+            </div>
+        </div>
+        <div class="con">
+            <div class="where">
+                <div class="icont"></div>
+                <p>Q.关于拍摄张数</p>
+            </div>
+            <div class="where-content clearfix">
+                <div class="zimu">A.</div>
+                <p class="content">  伊娜爱贝儿的答案：伊娜爱贝儿拍摄底片数量在150张左右，如果宝贝状态较好，我们拍摄的会略多一些。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="height: 75px"></div>
+<div class="bottom"></div>
+<div class="base">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-8 col-sm-6 clearfix">
+                <div class="row">
+                    <dl class="twoma col-lg-6 col-md-6 clearfix">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿官方微博</p>
+                            <p class="xiahengxian">
+                                yinababybbs
+                                <span>@WEIBO</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿摄影品牌信息</p>
+                                <p>
+                                    微博号:
+                                    <span>伊娜爱贝儿</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="twoma col-lg-6 col-md-6 clearfix pt30">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿官方微信</p>
+                            <p class="xiahengxian">
+                                yinababyer
+                                <span>@WEIXIN</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿摄影品牌信息</p>
+                                <p>
+                                    微信号:
+                                    <span>yinababyer</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="twoma col-lg-6 col-md-6 clearfix pt30">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿微信客服</p>
+                            <p class="xiahengxian">
+                                yinababy001
+                                <span>@WEIXIN</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿优惠资讯</p>
+                                <p>
+                                    微信号:
+                                    <span>yinababy001</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="ftlxnews">
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">CONTACT US</h2>
+                        <h2 class="eng">联系我们</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><p>电话：010-63327610</p></li>
+                        <li><p>地址：北京海淀南路艾瑟顿广场101-海淀妇幼对面</p></li>
+                        <li><p>信箱：yinnababy@126.com</p></li>
+                        <li><p>微信：yinababyer（公众号）</p></li>
+                        <li><p>微信：yinababy001（客服号）</p></li>
+                        <li><p>博客：blog.sina.cn/yinababyer</p></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">WEB MAP</h2>
+                        <h2 class="eng">网站导航</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><a href="">首页</a></li>
+                        <li><a href="">关于我们</a></li>
+                        <li><a href="">套餐价格</a></li>
+                        <li><a href="">客户引导</a></li>
+                        <li><a href="">联系我们</a></li>
+                        <li><a href="">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">NWES</h2>
+                        <h2 class="eng">新闻资讯</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><a href="">尼康镜头在北京孕妇照摄影应用中的</a></li>
+                        <li><a href="">儿童影楼如何低成本选购定焦镜头</a></li>
+                        <li><a href="">儿童摄影店管理迟到、早退问题</a></li>
+                        <li><a href="">儿童摄影道具在实际拍摄中的应用</a></li>
+                        <li><a href="">儿童摄影的技术提升和独特卖点</a></li>
+                        <li><a href="">室内儿童摄影用光之散射光</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="last-bottom">
+    <p>
+        Bei Jing yinababy All Rights Reserved 伊娜爱贝儿
+        <a href="" style="color: #d6d6d6" target="_blank">儿童摄影</a>
+        有限公司版权所有 京ICP备11009011号
+    </p>
+    <p>本网站提供的任何内容（伊娜爱贝儿）的版权均属于北京伊娜爱贝儿文化发展有限公司</p>
+    <p>
+        未经北京伊娜爱贝儿许可
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2954759'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2954759%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        不得以任何方式擅自传播本网站内容。
+    </p>
+    <p style="text-align:center;color: #505050;font-size: 12px">友情连接:</p>
+    <a target="_blank" href="http://www.ibabyer.com/" style="color: #505050">儿童摄影加盟</a>
+    <a target="_blank" href="http://www.ertongsheyingwang.com/" style="color: #505050">儿童摄影加盟</a>
+    <a target="_blank" href="http://www.12282.net/" style="color: #505050">影楼微信营销</a>
+    <a target="_blank" href="http://www.yinababy.com/news/" style="color: #505050">海淀妇幼</a>
+    <a target="_blank" href="http://www.gaonphoto.com/" style="color: #505050">服装摄影</a>
+
+</div>
+<!--<script>
+    (function(){
+   var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>-->
+<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/navhengtiao.js"></script>
+<script type="text/javascript" src="bootstrap3/js/indedx.js"></script>
+<script type="text/javascript" src="bootstrap3/js/main1.js"></script>
+<script type="text/javascript" src="bootstrap3/js/jquery-scrollto.js"></script>
+<!--引入和瀑布流相关的文件-->
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.js"></script>
+<script>
+    //让轮播图开始移动
+    $("#myCarousel").carousel("cycle");
+    //让轮播图的第一个显示
+    $(".item").eq(0).attr("class","item active");
+    //瀑布流初始化代码
+    $(".grid").masonry({
+        itemSelector: ".grid-item", //告诉框架 选择器是什么
+        columnWidth: 380 //告诉框架 每个元素所占宽度(元素宽度+间距)
+    })
+    //图片加载完之后让瀑布流处理一下显示布局
+    $(".grid").imagesLoaded().progress(function () {
+        //此处代码图片加载完之后会执行
+        $(".grid").masonry("layout");//让瀑布流重新计算显示效果  解决图片层叠问题
+    });
+    /*function changeImg() {
+        document.getElementById("img1").src="img/yuyue2.png";
+        document.getElementById("img2").src="img/tixing2.png"
+    }
+*/
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('.u-guid-btn').on('click',function(){
+            var index=$(this).index();
+            $(".guid-item").eq(index).ScrollTo({
+                duration: 1000,
+                easing: 'linear'
+            });
+        });
+    })
+
+    function changeDivType(obj){
+        $(obj).parent().find("div.bgc2").removeClass("bgc2");
+        $(obj).addClass("bgc2");
+    }
+
+    $(function(){
+        $('.shop:not(:first)').hide();
+        $('.m-shop li').on('mouseenter',function(){
+            $(this).find('.shop').stop().show();
+            $(this).siblings().find('.shop').stop().hide()
+        })
+    })
+
+</script>
+
+
+</body>
+</html>

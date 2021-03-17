@@ -14,13 +14,14 @@ public class TitleDao {
         ArrayList<Title> list = new ArrayList<>();
         //获取连接
         try (Connection conn = DBUtils.getConn()){
-            String sql = "select id,name from title";
+            String sql = "select id,name,url from title";
             Statement s = conn.createStatement();
             ResultSet rs = s.executeQuery(sql);
             while (rs.next()){
                 int id = rs.getInt(1);
                 String name = rs.getString(2);
-                list.add(new Title(id,name));
+                String url = rs.getString(3);
+                list.add(new Title(id,name,url));
             }
         } catch (Exception e) {
             e.printStackTrace();

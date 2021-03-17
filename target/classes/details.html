@@ -11,6 +11,7 @@
     <meta name="Keywords" content="海淀区儿童摄影,北京海淀区儿童摄影哪家好,北京儿童摄影团购,北京儿童摄影影楼,朝阳区儿童摄影,朝阳区儿童摄影团购,北京新生儿上门摄影,北京上门拍摄新生儿">
     <link rel="stylesheet" href="bootstrap3/css/main.css"/>
     <link rel="stylesheet" href="bootstrap3/css/home.css" />
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/social-share.js/1.0.9/css/share.min.css">
 </head>
 <style>
     .header{
@@ -70,21 +71,22 @@
     }
 
 
+
 </style>
 <body>
 <div class="navfix">
     <ul class="top-nav">
-        <li><a href="">摄影作品</a></li>
-        <li><a href="">套餐价格</a></li>
+        <li><a href="/product">摄影作品</a></li>
+        <li><a href="/packages">套餐价格</a></li>
         <li>
             <div class="logopick">
-                <a href="" title="首页">
+                <a href="/" title="首页">
                     <img border="0" src="img/logo2.png" alt="首页">
                 </a>
             </div>
         </li>
-        <li><a href="">客户引导</a></li>
-        <li><a href="">联系我们</a></li>
+        <li><a href="/lead">客户引导</a></li>
+        <li><a href="/contact">联系我们</a></li>
     </ul>
 </div>
 <div class="header">
@@ -98,7 +100,7 @@
         <ul class="s-nav">
             <li th:each="t:${list}">
                 <div class="daxiao">
-                    <a th:text="${t.name}" href=""></a>
+                    <a th:text="${t.name}" th:href="${t.url}"></a>
                 </div>
                 <div class="sport">
                     <span class="bianhua" style="left: 50%; width: 0"></span>
@@ -140,14 +142,29 @@
         </div>
         <div class="bottom_content">
             <ul class="clearfix">
-                <li style="padding: 0" class="article"><a href=""><img style="padding: 0 20px 0 10px" src="img/article.png" alt="">全部作品</a></li>
-                <li style="padding: 0" class="share"><a href=""><img style="padding: 0 20px 0 10px" src="img/return.png" alt="">分享作品</a></li>
+                <li style="padding: 0" class="article"><a href="/product"><img style="padding: 0 20px 0 10px" src="img/article.png" alt="">全部作品</a></li>
+                <li id="l2" style="padding: 0" class="share" onclick="display('s-share')">
+                    <a>
+                        <img style="padding: 0 20px 0 10px" src="img/return.png" alt="">
+                        分享作品
+                    </a>
+                </li>
                 <li style="padding: 0" class="time"><a href=""><img style="padding: 0 20px 0 10px" src="img/time.png" alt="">预顶档期</a></li>
             </ul>
+
         </div>
     </div>
     <!--轮播图结束-->
-
+<!--分享功能开始-->
+<div id="s-share" class="social-share" data-initialized="true" style="display: none;float: right">
+    <a href="" class="social-share-icon icon-qq"><p>分享到qq</p></a>
+    <a href="" class="social-share-icon icon-weibo"><p>分享到微博</p></a>
+    <a href="" class="social-share-icon icon-qzone"><p>分享到空间</p></a>
+    <a href="" class="social-share-icon icon-wechat"><p>分享到微信</p></a>
+    <a href="" class="social-share-icon icon-douban"><p>分享到豆瓣</p></a>
+    <a href="" class="social-share-icon icon-diandian"><p>分享到点点</p></a>
+</div>
+<!--分享功能结束-->
 <div class="bottom"></div>
 <div class="base">
     <div class="container">
@@ -161,13 +178,13 @@
                         <dd class="righttext">
                             <p class="big">伊娜爱贝儿官方微博</p>
                             <p class="xiahengxian">
-                                "yinababybbs"
+                                yinababybbs
                                 <span>@WEIBO</span>
                             </p>
                             <div>
                                 <p>及时获取伊娜爱贝儿摄影品牌信息</p>
                                 <p>
-                                    "微博号:"
+                                    微博号:
                                     <span>伊娜爱贝儿</span>
                                 </p>
                             </div>
@@ -180,13 +197,13 @@
                         <dd class="righttext">
                             <p class="big">伊娜爱贝儿官方微信</p>
                             <p class="xiahengxian">
-                                "yinababyer"
+                                yinababyer
                                 <span>@WEIXIN</span>
                             </p>
                             <div>
                                 <p>及时获取伊娜爱贝儿摄影品牌信息</p>
                                 <p>
-                                    "微信号:"
+                                    微信号:
                                     <span>yinababyer</span>
                                 </p>
                             </div>
@@ -199,13 +216,13 @@
                         <dd class="righttext">
                             <p class="big">伊娜爱贝儿微信客服</p>
                             <p class="xiahengxian">
-                                "yinababy001"
+                                yinababy001
                                 <span>@WEIXIN</span>
                             </p>
                             <div>
                                 <p>及时获取伊娜爱贝儿优惠资讯</p>
                                 <p>
-                                    "微信号:"
+                                    微信号:
                                     <span>yinababy001</span>
                                 </p>
                             </div>
@@ -213,7 +230,7 @@
                     </dl>
                 </div>
             </div>
-            <div ftlxnews>
+            <div class="ftlxnews">
                 <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
                     <div class="contaci">
                         <h2 class="eng">CONTACT US</h2>
@@ -308,6 +325,7 @@
 <!--引入和瀑布流相关的文件-->
 <script src="js/masonry.pkgd.min.js"></script>
 <script src="js/imagesloaded.pkgd.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/social-share.js/1.0.9/js/share.min.js"></script>
 <script>
     //让轮播图开始移动
     $("#myCarousel").carousel("cycle");
@@ -350,6 +368,38 @@
     //让轮播图中的第一个图标变成实心圆
     $("ol>li").eq(0).attr("class","active");
 
+    //给分享添加点击事件
+    /*$(document).ready(function () {
+        $("#l2").click(function () {
+            $("#s-share").show();
+        });
+    });*/
+    function display(id){
+        var traget=document.getElementById(id);
+        if(traget.style.display=="none"){
+            traget.style.display="";
+        }else{
+            traget.style.display="none";
+        }
+    }
+
+
+</script>
+<!--分享功能-->
+<script>
+    var $config = {
+        url                 : window.location.href,// 网址，默认使用 window.location.href
+        source              : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+        title               : '', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
+        description         : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+        image               : '', // 图片, 默认取网页中第一个img标签
+        sites               : ['qzone', 'qq', 'weibo','wechat'], // 启用的站点
+        disabled            : ['google', 'facebook', 'twitter'], // 禁用的站点
+        wechatQrcodeTitle   : '微信扫一扫：分享', // 微信二维码提示文字
+        wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+        target : '_blank' //打开方式
+    };
+    $('.social-share').share($config);
 </script>
 </body>
 </html>

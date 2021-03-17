@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>伊娜爱贝儿儿童摄影工作室 - 新生儿摄影|满月照|百天照|孕妇照|新生儿上门拍摄|北京海淀区儿童摄影团购</title>
+    <meta name="description" content="北京伊娜爱贝儿摄影美学馆,全国知名的专业北京儿童摄影加盟连锁。高端定制北京新生儿摄影、满月照、百天照、周岁照、生日宝宝照以及亲子孕妇照。为北京海淀区、朝阳区以及中关村、五道口、北太平庄、苏州桥、公主坟/万寿路、紫竹桥、航天桥、上地、颐和园等提供上门拍摄新生儿服务。要问北京海淀区儿童摄影哪家好?首选伊娜爱贝儿！">
+    <meta name="Keywords" content="海淀区儿童摄影,北京海淀区儿童摄影哪家好,北京儿童摄影团购,北京儿童摄影影楼,朝阳区儿童摄影,朝阳区儿童摄影团购,北京新生儿上门摄影,北京上门拍摄新生儿">
+    <link rel="stylesheet" href="bootstrap3/css/main.css"/>
+    <link rel="stylesheet" href="bootstrap3/css/home.css" />
+</head>
+<style>
+    .header{
+        position: relative;
+    }
+    .h-nav{
+        background-color: #D7CACB;
+    }
+    .grid-item a:hover .mask {
+        opacity: 1;
+    }
+    .grid-item img{
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .grid-item a:hover img{
+        transform: scale(1.1);
+    }
+    .sanjiao{
+        position: absolute;
+        margin-left: -29px;
+        padding-top: 65px;
+        transform:rotate(90deg);
+    }
+    @media (min-width: 994px) and (max-width: 1200px){
+    .sanjiao{
+        position: absolute;
+        margin-left: -20px;
+        padding-top: 65px;
+        transform:rotate(90deg);
+    }
+    }
+
+    @media (max-width: 767px){
+        .sanjiao{
+          position: absolute;
+            padding-top: 100px;
+            margin-left: 25px;
+            transform:rotate(0deg);
+        }
+    }
+    @media (min-width: 768px) and (max-width: 993px){
+        .sanjiao {
+            position: absolute;
+            margin-left: -44px;
+            padding-top: 65px;
+            transform: rotate(90deg);
+        }
+
+    }
+
+
+
+</style>
+<body>
+<div class="navfix">
+    <ul class="top-nav">
+        <li><a href="/product">摄影作品</a></li>
+        <li><a href="/packages">套餐价格</a></li>
+        <li>
+            <div class="logopick">
+                <a href="/" title="首页">
+                    <img border="0" src="img/logo2.png" alt="首页">
+                </a>
+            </div>
+        </li>
+        <li><a href="/lead">客户引导</a></li>
+        <li><a href="/contact">联系我们</a></li>
+    </ul>
+</div>
+<div class="header">
+    <div class="hd">
+        <a href="/" class="logo" title="紫竹桥儿童摄影,航天桥满月照,公主坟满月照,五道口百天照,上地百天照,亚运村儿童摄影,中关村儿童摄影,中关村百天照,海淀区周岁照,北京周岁摄影,航天桥儿童摄影,门头沟儿童摄影,石景山孕妇摄影,海淀区孕妇照,北京儿童摄影,北京满月照,北京百天照,北京周岁照,北京新生儿上门">
+            <img src="img/logo.png"/>
+        </a>
+    </div>
+    <div class="h-nav" style="background-color:  rgba(81,24,18,0.2);">
+        <!--<div class="opacity opacity1" style="background-color:  rgba(81,24,18,0.2);"></div>-->
+        <ul class="s-nav">
+            <li th:each="t:${list}">
+                <div class="daxiao">
+                    <a th:text="${t.name}" th:href="${t.url}"></a>
+                </div>
+                <div class="sport">
+                    <span class="bianhua" style="left: 50%; width: 0"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="bgc" style="margin-bottom: 200px">
+    <div class="container">
+        <div class="row">
+            <div class="zuopin">
+                <div class="taoxi col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3">
+                    <img src="img/buy.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zhengti">
+        <div class="container">
+            <div class="row">
+                <div class="left-sleeppc col-md-6 hidden-sm hidden-xs">
+                    <img src="img/buy01.png">
+                </div>
+                <div class="mid-content col-md-4 col-sm-8">
+                    <div class="tab-B">
+                        <div class="taocan">
+                            <div class="neijing" style="padding-top: 5%">
+                                <div class="neijingA">
+                                    <i class="indoor">C</i>
+                                    <i class="taoxi">套系</i>
+                                    <i class="jiaqian">1888</i>
+                                    <i class="yuan">元</i>
+                                </div>
+                                <div class="neijing-content">
+                                    <p>服装造型4组（亲子服装自备）</p>
+                                    <br>
+                                    <p>32张入10X10寸欧式皮册一本（10P）</p>
+                                    <br>
+                                    <p>艾莎桌摆套装一套【3寸 5寸 8寸】</p>
+                                    <br>
+                                    <p>赠送20寸欧式简约框一个</p>
+                                    <br>
+                                    <p>精修底片32张U盘拷贝赠送所有底片</p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div class="right-btn clearfix col-md-2 col-sm-4" style="padding: 0">
+                   <div class="taoxiA xiaojiantou">
+                       <img class="sanjiao" src="img/xiaojiantou1.png" style="">
+                       <div class="btn-jing nei-color">
+                           <img src="img/nei1.png">
+                       </div>
+                   </div>
+                   <a href="">
+                       <div class="schedule">
+                           <input type="submit" value="预定档期">
+                       </div>
+                   </a>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="zhengti">
+        <div class="container">
+            <div class="row">
+                <div class="left-sleeppc col-md-6 hidden-sm hidden-xs">
+                    <img src="img/buy02.png">
+                </div>
+                <div class="mid-content col-md-4 col-sm-8">
+                    <div class="tab-B">
+                        <div class="taocan">
+                            <div class="neijing"  style="padding-top: 5%">
+                                <div class="neijingA">
+                                    <i class="indoor">B</i>
+                                    <i class="taoxi">套系</i>
+                                    <i class="jiaqian">1388</i>
+                                    <i class="yuan">元</i>
+                                </div>
+                                <div class="neijing-content">
+                                    <p>服装造型3组（亲子服装自备）</p>
+                                    <br>
+                                    <p>26张入10X10寸米兰册一本（8P）</p>
+                                    <br>
+                                    <p>10寸水晶桌摆+20寸欧式简约框各一个</p>
+                                    <br>
+                                    <p>精修底片26张U盘拷贝</p>
+                                    <br>
+                                    <p>注：精修底片多选1张20元 / 入册30元</p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-btn clearfix col-md-2 col-sm-4" style="padding: 0">
+                    <div class="taoxiA xiaojiantou">
+                        <img class="sanjiao" src="img/xiaojiantou1.png" style="">
+                        <div class="btn-jing nei-color">
+                            <img src="img/nei1.png">
+                        </div>
+                    </div>
+                    <a href="">
+                        <div class="schedule">
+                            <input type="submit" value="预定档期">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zhengti">
+        <div class="container">
+            <div class="row">
+                <div class="left-sleeppc col-md-6 hidden-sm hidden-xs">
+                    <img src="img/buy03.png">
+                </div>
+                <div class="mid-content col-md-4 col-sm-8">
+                    <div class="tab-B">
+                        <div class="taocan">
+                            <div class="neijing"  style="padding-top: 5%">
+                                <div class="neijingA">
+                                    <i class="indoor">A</i>
+                                    <i class="taoxi">套系</i>
+                                    <i class="jiaqian">988</i>
+                                    <i class="yuan">元</i>
+                                </div>
+                                <div class="neijing-content">
+                                    <p>服装造型3组（亲子服装自备）</p>
+                                    <br>
+                                    <p>22张入8X8寸韩式米兰册一本（10P）</p>
+                                    <br>
+                                    <p>赠送艾莎桌摆套装一套（三个）</p>
+                                    <br>
+                                    <p>精修底片22张U盘拷贝</p>
+                                    <br>
+                                    <p>注：精修底片多选1张20元 / 入册30元</p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-btn clearfix col-md-2 col-sm-4" style="padding: 0">
+                    <div class="taoxiA xiaojiantou">
+                        <img class="sanjiao" src="img/xiaojiantou1.png" style="">
+                        <div class="btn-jing nei-color">
+                            <img src="img/nei1.png">
+                        </div>
+                    </div>
+                    <a href="">
+                        <div class="schedule">
+                            <input type="submit" value="预定档期">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom"></div>
+<div class="base">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-8 col-sm-6 clearfix">
+                <div class="row">
+                    <dl class="twoma col-lg-6 col-md-6 clearfix">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿官方微博</p>
+                            <p class="xiahengxian">
+                                yinababybbs
+                                <span>@WEIBO</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿摄影品牌信息</p>
+                                <p>
+                                    微博号:
+                                    <span>伊娜爱贝儿</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="twoma col-lg-6 col-md-6 clearfix pt30">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿官方微信</p>
+                            <p class="xiahengxian">
+                                yinababyer
+                                <span>@WEIXIN</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿摄影品牌信息</p>
+                                <p>
+                                    微信号:
+                                    <span>yinababyer</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="twoma col-lg-6 col-md-6 clearfix pt30">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿微信客服</p>
+                            <p class="xiahengxian">
+                                yinababy001
+                                <span>@WEIXIN</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿优惠资讯</p>
+                                <p>
+                                    微信号:
+                                    <span>yinababy001</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="ftlxnews">
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">CONTACT US</h2>
+                        <h2 class="eng">联系我们</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><p>电话：010-63327610</p></li>
+                        <li><p>地址：北京海淀南路艾瑟顿广场101-海淀妇幼对面</p></li>
+                        <li><p>信箱：yinnababy@126.com</p></li>
+                        <li><p>微信：yinababyer（公众号）</p></li>
+                        <li><p>微信：yinababy001（客服号）</p></li>
+                        <li><p>博客：blog.sina.cn/yinababyer</p></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">WEB MAP</h2>
+                        <h2 class="eng">网站导航</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><a href="">首页</a></li>
+                        <li><a href="">关于我们</a></li>
+                        <li><a href="">套餐价格</a></li>
+                        <li><a href="">客户引导</a></li>
+                        <li><a href="">联系我们</a></li>
+                        <li><a href="">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">NWES</h2>
+                        <h2 class="eng">新闻资讯</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><a href="">尼康镜头在北京孕妇照摄影应用中的</a></li>
+                        <li><a href="">儿童影楼如何低成本选购定焦镜头</a></li>
+                        <li><a href="">儿童摄影店管理迟到、早退问题</a></li>
+                        <li><a href="">儿童摄影道具在实际拍摄中的应用</a></li>
+                        <li><a href="">儿童摄影的技术提升和独特卖点</a></li>
+                        <li><a href="">室内儿童摄影用光之散射光</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="last-bottom">
+    <p>
+        Bei Jing yinababy All Rights Reserved 伊娜爱贝儿
+        <a href="" style="color: #d6d6d6" target="_blank">儿童摄影</a>
+        有限公司版权所有 京ICP备11009011号
+    </p>
+    <p>本网站提供的任何内容（伊娜爱贝儿）的版权均属于北京伊娜爱贝儿文化发展有限公司</p>
+    <p>
+        未经北京伊娜爱贝儿许可
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2954759'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2954759%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        不得以任何方式擅自传播本网站内容。
+    </p>
+    <p style="text-align:center;color: #505050;font-size: 12px">友情连接:</p>
+    <a target="_blank" href="http://www.ibabyer.com/" style="color: #505050">儿童摄影加盟</a>
+    <a target="_blank" href="http://www.ertongsheyingwang.com/" style="color: #505050">儿童摄影加盟</a>
+    <a target="_blank" href="http://www.12282.net/" style="color: #505050">影楼微信营销</a>
+    <a target="_blank" href="http://www.yinababy.com/news/" style="color: #505050">海淀妇幼</a>
+    <a target="_blank" href="http://www.gaonphoto.com/" style="color: #505050">服装摄影</a>
+
+</div>
+<!--<script>
+    (function(){
+   var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>-->
+<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/navhengtiao.js"></script>
+<script type="text/javascript" src="bootstrap3/js/indedx.js"></script>
+<script type="text/javascript" src="bootstrap3/js/main.js"></script>
+<script type="text/javascript" src="bootstrap3/js/jquery-scrollto.js"></script>
+<!--引入和瀑布流相关的文件-->
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.js"></script>
+<script>
+    //让轮播图开始移动
+    $("#myCarousel").carousel("cycle");
+    //让轮播图的第一个显示
+    $(".item").eq(0).attr("class","item active");
+    //瀑布流初始化代码
+    $(".grid").masonry({
+        itemSelector: ".grid-item", //告诉框架 选择器是什么
+        columnWidth: 380 //告诉框架 每个元素所占宽度(元素宽度+间距)
+    })
+    //图片加载完之后让瀑布流处理一下显示布局
+    $(".grid").imagesLoaded().progress(function () {
+        //此处代码图片加载完之后会执行
+        $(".grid").masonry("layout");//让瀑布流重新计算显示效果  解决图片层叠问题
+    });
+    //滚动监听  最上方导航隐藏，向下滚动时出现
+    $(window).scroll(function () {
+        var scrollTop=$(window).scrollTop();
+        $(window).innerWidth()
+        if ($(window).scrollTop() > 196) {
+            //var c = $(window).scrollTop()/10-30;
+
+            if ($(".navfix").css('top') <= -90 + 'px') {
+                $(".navfix").animate({'top': '0'}, 100);
+            }
+        } else {
+            if( $(window).innerWidth()>1024){
+                $(".s-nav li:nth-child(3)").addClass("waice");
+                $(".waice").stop().animate({'margin-left':scrollTop*2.1+'px'},200);
+            }
+
+            if (parseInt($(".navfix").css('top')) ===0) {
+                //alert(111);
+                $(".navfix").animate({'top': -90 + 'px'}, 100);
+                console.log($(window).scrollTop());
+            }
+
+        }
+    })
+
+</script>
+</body>
+</html>

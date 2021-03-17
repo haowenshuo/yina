@@ -3,10 +3,12 @@ package cn.tedu.entity;
 public class Title {
     private int id;
     private String name;
+    private String url;
 
-    public Title(int id, String name) {
+    public Title(int id, String name, String url) {
         this.id = id;
         this.name = name;
+        this.url = url;
     }
 
     public int getId() {
@@ -25,11 +27,20 @@ public class Title {
         this.name = name;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "Title{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
                 '}';
     }
 }

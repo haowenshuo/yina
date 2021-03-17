@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>伊娜爱贝儿儿童摄影工作室 - 新生儿摄影|满月照|百天照|孕妇照|新生儿上门拍摄|北京海淀区儿童摄影团购</title>
+    <meta name="description" content="北京伊娜爱贝儿摄影美学馆,全国知名的专业北京儿童摄影加盟连锁。高端定制北京新生儿摄影、满月照、百天照、周岁照、生日宝宝照以及亲子孕妇照。为北京海淀区、朝阳区以及中关村、五道口、北太平庄、苏州桥、公主坟/万寿路、紫竹桥、航天桥、上地、颐和园等提供上门拍摄新生儿服务。要问北京海淀区儿童摄影哪家好?首选伊娜爱贝儿！">
+    <meta name="Keywords" content="海淀区儿童摄影,北京海淀区儿童摄影哪家好,北京儿童摄影团购,北京儿童摄影影楼,朝阳区儿童摄影,朝阳区儿童摄影团购,北京新生儿上门摄影,北京上门拍摄新生儿">
+    <link rel="stylesheet" href="bootstrap3/css/main.css"/>
+    <link rel="stylesheet" href="bootstrap3/css/home.css" />
+</head>
+<style>
+    .header{
+        position: relative;
+    }
+    .h-nav{
+        background-color: #D7CACB;
+    }
+    .grid-item a:hover .mask {
+        opacity: 1;
+    }
+    .grid-item img{
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .grid-item a:hover img{
+        transform: scale(1.1);
+    }
+    .homeing{
+        margin: 90px auto;max-width: 1200px;
+    }
+    .homeing img{
+        display:block; margin:0 auto;
+    }
+    .contact_left {
+        width: 35%;
+        margin-right: 5%;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .w1200{
+        position: relative;
+    }
+    @media screen and (max-width: 1279px){
+        .w1200 {
+            width: 1000px !important;
+        }
+    }
+    em{
+        font-size: 18px;
+        width: 100%;
+        display: inline-block;
+        font-style: normal;
+        margin-bottom: 20px;
+    }
+    .contact_right{
+        width: 60%;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    dl{
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    dt{
+        font-size: 12px;
+    }
+    small{
+        font-size: 80%;
+    }
+    input,.formText{
+        border: 1px solid #dedede;
+        background-color: #fff;
+        font-size: 14px;
+        line-height: 16px;
+        width: 100%;
+        padding: 10px;
+        outline: medium;
+        border-radius: 3px;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        transition: 0.4s;
+    }
+    textarea{
+        min-height: 100px;
+        max-width: 100%;
+    }
+    button{
+        padding: 10px;
+        width: 120px;
+        background-color: #333;
+        color: #fff;
+        margin: 10px auto;
+        line-height: 18px;
+        cursor: pointer;
+        border: none;
+        transition: 0.4s;
+    }
+    .formText:focus{
+        border:  1px solid #31b0d5;
+    }
+
+</style>
+<body>
+<div class="navfix">
+    <ul class="top-nav">
+        <li><a href="/product">摄影作品</a></li>
+        <li><a href="/packages">套餐价格</a></li>
+        <li>
+            <div class="logopick">
+                <a href="/" title="首页">
+                    <img border="0" src="img/logo2.png" alt="首页">
+                </a>
+            </div>
+        </li>
+        <li><a href="lead.html">客户引导</a></li>
+        <li><a href="/contact">联系我们</a></li>
+    </ul>
+</div>
+<div class="header">
+    <div class="hd">
+        <a href="/" class="logo" title="紫竹桥儿童摄影,航天桥满月照,公主坟满月照,五道口百天照,上地百天照,亚运村儿童摄影,中关村儿童摄影,中关村百天照,海淀区周岁照,北京周岁摄影,航天桥儿童摄影,门头沟儿童摄影,石景山孕妇摄影,海淀区孕妇照,北京儿童摄影,北京满月照,北京百天照,北京周岁照,北京新生儿上门">
+            <img src="img/logo.png"/>
+        </a>
+    </div>
+    <div class="h-nav" style="background-color:  rgba(81,24,18,0.2);">
+        <!--<div class="opacity opacity1" style="background-color:  rgba(81,24,18,0.2);"></div>-->
+        <ul class="s-nav">
+            <li th:each="t:${list}">
+                <div class="daxiao">
+                    <a th:text="${t.name}" th:href="${t.url}"></a>
+                </div>
+                <div class="sport">
+                    <span class="bianhua" style="left: 50%; width: 0"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<section class="w1200 padd" style="width: 1200px; margin: 80px auto 60px; font-size: 0px;">
+    <div class="homeing">
+        <img src="img/contact.png">
+    </div>
+    <div>
+        <div class="contact">
+            <div class="contact_left">
+                <em>联系方式</em>
+                <p style="white-space: pre-line;">欢迎任何形式的媒体与商务合作
+                    深入的了解，有利于为您提供更优质的服务
+
+                    电话：010-63327610
+                    邮箱：yinababy@126.com
+                    地址：北京市海淀南路34号艾瑟顿商业广场101
+                    周边：海淀妇幼（老院）对面
+                </p>
+            </div>
+            <div class="contact_right">
+                <em>欢迎给我们留言</em>
+                <div class="form">
+                    <form name="feedback" method="post" action="message">
+                        <dl>
+                            <dt>
+                                您的称呼
+                                <small>(必填)</small>
+                            </dt>
+                            <dd>
+                                <input id="n_span" name="name" class="formText" type="text">
+                                <span id="nspan"></span>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                您的联系方式
+                                <small>(必填)</small>
+                            </dt>
+
+                            <dd>
+                                <input id="t_span" type="text" name="tel" class="formText">
+                                <span id="tspan"></span>
+                            </dd>
+                        </dl>
+                        <dl style="width: 100%">
+                            <dt>
+                                您的想法/意见
+                                <small>(必填)</small>
+                            </dt>
+                            <dd>
+                                <textarea id="c_span" name="comments" class="formText"></textarea>
+                                <span id="cspan"></span>
+                            </dd>
+                        </dl>
+                        <div class="formBtn">
+                            <button name="submit" type="submit">提交留言</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="bottom"></div>
+<div class="base">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-8 col-sm-6 clearfix">
+                <div class="row">
+                    <dl class="twoma col-lg-6 col-md-6 clearfix">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿官方微博</p>
+                            <p class="xiahengxian">
+                                yinababybbs
+                                <span>@WEIBO</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿摄影品牌信息</p>
+                                <p>
+                                    微博号:
+                                    <span>伊娜爱贝儿</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="twoma col-lg-6 col-md-6 clearfix pt30">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿官方微信</p>
+                            <p class="xiahengxian">
+                                yinababyer
+                                <span>@WEIXIN</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿摄影品牌信息</p>
+                                <p>
+                                    微信号:
+                                    <span>yinababyer</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="twoma col-lg-6 col-md-6 clearfix pt30">
+                        <dt class="erweima">
+                            <img src="img/weibo.png">
+                        </dt>
+                        <dd class="righttext">
+                            <p class="big">伊娜爱贝儿微信客服</p>
+                            <p class="xiahengxian">
+                                yinababy001
+                                <span>@WEIXIN</span>
+                            </p>
+                            <div>
+                                <p>及时获取伊娜爱贝儿优惠资讯</p>
+                                <p>
+                                    微信号:
+                                    <span>yinababy001</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="ftlxnews">
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">CONTACT US</h2>
+                        <h2 class="eng">联系我们</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><p>电话：010-63327610</p></li>
+                        <li><p>地址：北京海淀南路艾瑟顿广场101-海淀妇幼对面</p></li>
+                        <li><p>信箱：yinnababy@126.com</p></li>
+                        <li><p>微信：yinababyer（公众号）</p></li>
+                        <li><p>微信：yinababy001（客服号）</p></li>
+                        <li><p>博客：blog.sina.cn/yinababyer</p></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">WEB MAP</h2>
+                        <h2 class="eng">网站导航</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><a href="">首页</a></li>
+                        <li><a href="">关于我们</a></li>
+                        <li><a href="">套餐价格</a></li>
+                        <li><a href="">客户引导</a></li>
+                        <li><a href="">联系我们</a></li>
+                        <li><a href="">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 col-sm-offset-1 col-md-offset-0">
+                    <div class="contaci">
+                        <h2 class="eng">NWES</h2>
+                        <h2 class="eng">新闻资讯</h2>
+                    </div>
+                    <ul class="m-shop">
+                        <li><a href="">尼康镜头在北京孕妇照摄影应用中的</a></li>
+                        <li><a href="">儿童影楼如何低成本选购定焦镜头</a></li>
+                        <li><a href="">儿童摄影店管理迟到、早退问题</a></li>
+                        <li><a href="">儿童摄影道具在实际拍摄中的应用</a></li>
+                        <li><a href="">儿童摄影的技术提升和独特卖点</a></li>
+                        <li><a href="">室内儿童摄影用光之散射光</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="last-bottom">
+    <p>
+        Bei Jing yinababy All Rights Reserved 伊娜爱贝儿
+        <a href="" style="color: #d6d6d6" target="_blank">儿童摄影</a>
+        有限公司版权所有 京ICP备11009011号
+    </p>
+    <p>本网站提供的任何内容（伊娜爱贝儿）的版权均属于北京伊娜爱贝儿文化发展有限公司</p>
+    <p>
+        未经北京伊娜爱贝儿许可
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2954759'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2954759%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        不得以任何方式擅自传播本网站内容。
+    </p>
+    <p style="text-align:center;color: #505050;font-size: 12px">友情连接:</p>
+    <a target="_blank" href="http://www.ibabyer.com/" style="color: #505050">儿童摄影加盟</a>
+    <a target="_blank" href="http://www.ertongsheyingwang.com/" style="color: #505050">儿童摄影加盟</a>
+    <a target="_blank" href="http://www.12282.net/" style="color: #505050">影楼微信营销</a>
+    <a target="_blank" href="http://www.yinababy.com/news/" style="color: #505050">海淀妇幼</a>
+    <a target="_blank" href="http://www.gaonphoto.com/" style="color: #505050">服装摄影</a>
+
+</div>
+<!--<script>
+    (function(){
+   var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>-->
+<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/navhengtiao.js"></script>
+<script type="text/javascript" src="bootstrap3/js/indedx.js"></script>
+<script type="text/javascript" src="bootstrap3/js/main.js"></script>
+<script type="text/javascript" src="bootstrap3/js/jquery-scrollto.js"></script>
+<!--引入和瀑布流相关的文件-->
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.js"></script>
+<script>
+    //让轮播图开始移动
+    $("#myCarousel").carousel("cycle");
+    //让轮播图的第一个显示
+    $(".item").eq(0).attr("class","item active");
+    //瀑布流初始化代码
+    $(".grid").masonry({
+        itemSelector: ".grid-item", //告诉框架 选择器是什么
+        columnWidth: 380 //告诉框架 每个元素所占宽度(元素宽度+间距)
+    })
+    //图片加载完之后让瀑布流处理一下显示布局
+    $(".grid").imagesLoaded().progress(function () {
+        //此处代码图片加载完之后会执行
+        $(".grid").masonry("layout");//让瀑布流重新计算显示效果  解决图片层叠问题
+    });
+    //滚动监听  最上方导航隐藏，向下滚动时出现
+    $(window).scroll(function () {
+        var scrollTop=$(window).scrollTop();
+        $(window).innerWidth()
+        if ($(window).scrollTop() > 196) {
+            //var c = $(window).scrollTop()/10-30;
+
+            if ($(".navfix").css('top') <= -90 + 'px') {
+                $(".navfix").animate({'top': '0'}, 100);
+            }
+        } else {
+            if( $(window).innerWidth()>1024){
+                $(".s-nav li:nth-child(3)").addClass("waice");
+                $(".waice").stop().animate({'margin-left':scrollTop*2.1+'px'},200);
+            }
+
+            if (parseInt($(".navfix").css('top')) ===0) {
+                //alert(111);
+                $(".navfix").animate({'top': -90 + 'px'}, 100);
+                console.log($(window).scrollTop());
+            }
+
+        }
+    });
+
+    //给span_null添加失去焦点事件
+    $("#n_span").blur(function () {
+        //发出异步请求，检查联系方式是否为null
+        $.ajax({
+            type:"get",
+            url:"check",
+            data:"name="+$("#n_span").val(),
+            success:function (msg) {
+                //把接收到的内容显示到span中
+                $("#nspan").text(msg).css("color","red");
+            }
+        })
+
+    })
+    $("#t_span").blur(function () {
+        //发出异步请求，检查联系方式是否为null
+        $.ajax({
+            type:"get",
+            url:"check",
+            data:"tel="+$("#t_span").val(),
+            success:function (msg) {
+                //把接收到的内容显示到span中
+                $("#tspan").text(msg).css("color","red");
+            }
+        })
+
+    })
+    $("#c_span").blur(function () {
+        //发出异步请求，检查联系方式是否为null
+        $.ajax({
+            type:"get",
+            url:"check",
+            data:"comments="+$("#c_span").val(),
+            success:function (msg) {
+                //把接收到的内容显示到span中
+                $("#cspan").text(msg).css("color","red");
+            }
+        })
+
+    })
+
+
+</script>
+</body>
+</html>

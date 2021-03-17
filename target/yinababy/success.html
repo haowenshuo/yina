@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .tab{
+        border: solid 1px #28a4c9;
+    }
+
+</style>
+<body onload="javascript:djs();">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <center>
+        <table class="tab" style="border-radius: 3px;width: 600px" cellspacing="0">
+            <tr style="background-color: #28a4c9;height: 40px">
+                <td style="border-style: none;color: white;text-align: center">提示信息</td>
+            </tr>
+            <tr style="height: 200px;text-align: center">
+
+                <td style="border-style: none">
+                    留言发送成功<br>
+                    感谢您的留言，我们将在看到留言的第一时间回复您。<br>
+                    当前页面将于 <span id="djsSpan" style="color: green">5</span> 秒后返回上一页面...<br>
+                    <a href="/contact">如果您的浏览器没有自动跳转，请点击这里。</a>
+                </td>
+
+            </tr>
+        </table>
+    </center>
+</div>
+<script language='javascript' type='text/javascript'>
+    //页面自动跳转
+    // setTimeout("javascript:location.href='/contact'",5000);
+    var second = 6;
+    function djs() {
+        if(second<=0){
+            window.location.href = "/contact";
+            return;
+        }
+        second--;
+        var span = document.getElementById('djsSpan');
+        span.innerHTML=second.toString();
+        setTimeout('djs()', 1000);
+    }
+
+</script>
+</body>
+</html>
